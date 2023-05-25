@@ -1,0 +1,21 @@
+arm_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+     - Axis1
+     - Axis2
+     - Axis3
+     - Axis4
+     - left_finger_joint
+     - right_finger_joint
+  constraints:
+      goal_time: 0.6
+      stopped_velocity_tolerance: 0.05
+      Axis1: {trajectory: 0.1, goal: 0.1}
+      Axis2: {trajectory: 0.1, goal: 0.1}
+      Axis3: {trajectory: 0.1, goal: 0.1}
+      Axis4: {trajectory: 0.1, goal: 0.1}
+      left_finger_joint: {trajectory: 0.1, goal: 0.1}
+      right_finger_joint: {trajectory: 0.1, goal: 0.1}
+  stop_trajectory_duration: 0.5
+  state_publish_rate:  25
+  action_monitor_rate: 10

@@ -3,7 +3,7 @@
 <robot name="mogi_arm" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <!-- RViz colors -->
-  <xacro:include filename="$(find bme_ros_simple_arm)/urdf/materials.xacro" />
+  <xacro:include filename="$(find bme_ros_pp_project)/urdf/materials.xacro" />
 
   <!-- Global reference link -->
   <link name="world"/>
@@ -32,7 +32,7 @@
     <visual>
       <geometry>
         <!--<cylinder radius="0.15" length="0.05"/>-->
-        <mesh filename = "package://bme_ros_simple_arm/meshes/link0.dae"/>
+        <mesh filename = "package://bme_ros_pp_project/meshes/link0.dae"/>
       </geometry>
       <material name="grey"/>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>

@@ -3,12 +3,12 @@
 <robot name="tomi_arm" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <!-- RViz colors -->
-  <xacro:include filename="$(find bme_ros_simple_arm)/urdf/materials.xacro" />
+  <xacro:include filename="$(find bme_ros_pp_project)/urdf/materials.xacro" />
 
   <!-- Transmisions -->
-  <xacro:include filename="$(find bme_ros_simple_arm)/urdf/transmission.xacro" />
+  <xacro:include filename="$(find bme_ros_pp_project)/urdf/transmission.xacro" />
   <!-- Gazebo plugin -->
-  <xacro:include filename="$(find bme_ros_simple_arm)/urdf/tomi_arm.gazebo" />
+  <xacro:include filename="$(find bme_ros_pp_project)/urdf/tomi_arm.gazebo" />
 
 
 
@@ -41,7 +41,7 @@
     </collision>
     <visual>
       <geometry>
-        <mesh scale = "1 1 1" filename = "package://bme_ros_simple_arm/meshes/Link0.dae"/>
+        <mesh scale = "1 1 1" filename = "package://bme_ros_pp_project/meshes/Link0.dae"/>
       </geometry>
       <material name="grey"/>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
@@ -81,7 +81,7 @@
     </collision>
     <visual>
       <geometry>
-        <mesh scale = "1 1 1" filename = "package://bme_ros_simple_arm/meshes/Link1.dae"/>
+        <mesh scale = "1 1 1" filename = "package://bme_ros_pp_project/meshes/Link1.dae"/>
       </geometry>
       <material name="orange"/>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
@@ -121,7 +121,7 @@
     </collision>
     <visual>
       <geometry>
-        <mesh scale = "1 1 1" filename = "package://bme_ros_simple_arm/meshes/Link2.dae"/>
+        <mesh scale = "1 1 1" filename = "package://bme_ros_pp_project/meshes/Link2.dae"/>
         <!--<cylinder radius="0.05" length="0.2"/>-->
       </geometry>
       <material name="orange"/>
@@ -194,7 +194,7 @@
     </collision>
     <visual>
       <geometry>
-      <mesh scale = "1 1 1" filename = "package://bme_ros_simple_arm/meshes/Link3.dae"/>
+      <mesh scale = "1 1 1" filename = "package://bme_ros_pp_project/meshes/Link3.dae"/>
         <!--<cylinder radius="0.025" length="0.25"/>-->
       </geometry>
       <material name="orange"/>
@@ -228,7 +228,7 @@
     </collision>
     <visual>
       <geometry>
-        <mesh scale = "1 1 1" filename = "package://bme_ros_simple_arm/meshes/M.dae"/>
+        <mesh scale = "1 1 1" filename = "package://bme_ros_pp_project/meshes/M.dae"/>
         <!--<cylinder radius="0.025" length="0.25"/>-->
       </geometry>
       <material name="orange"/>
@@ -278,7 +278,7 @@
     </collision>
     <visual>
       <geometry>
-        <mesh scale = "1 1 1" filename = "package://bme_ros_simple_arm/meshes/MP1.dae"/>
+        <mesh scale = "1 1 1" filename = "package://bme_ros_pp_project/meshes/MP1.dae"/>
       </geometry>
       <material name="blue"/>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
@@ -335,7 +335,7 @@
     </collision>
     <visual>
       <geometry>
-        <mesh scale = "1 1 1" filename = "package://bme_ros_simple_arm/meshes/MP2.dae"/>
+        <mesh scale = "1 1 1" filename = "package://bme_ros_pp_project/meshes/MP2.dae"/>
       </geometry>
       <material name="blue"/>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>

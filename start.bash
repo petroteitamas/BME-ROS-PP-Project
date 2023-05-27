@@ -1,2 +1,2 @@
 #! /bin/bash
-roslaunch bme_ros_simple_arm spawn_robot.launch
+roslaunch bme_ros_pp_project spawn_robot.launch

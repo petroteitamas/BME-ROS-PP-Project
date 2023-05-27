@@ -1,2 +1,2 @@
 #! /bin/bash
-roslaunch bme_ros_simple_arm check_urdf.launch
+roslaunch bme_ros_pp_project check_urdf.launch

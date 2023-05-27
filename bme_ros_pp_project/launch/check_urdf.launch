@@ -2,9 +2,9 @@
 
 <launch>
 
-  <arg name="model" default="$(find bme_ros_simple_arm)/urdf/tomi_arm.xacro"/>
+  <arg name="model" default="$(find bme_ros_pp_project)/urdf/tomi_arm.xacro"/>
   <arg name="gui" default="true" />
-  <arg name="rvizconfig" default="$(find bme_ros_simple_arm)/rviz/check_urdf.rviz" />
+  <arg name="rvizconfig" default="$(find bme_ros_pp_project)/rviz/check_urdf.rviz" />
 
   <param name="robot_description" command="$(find xacro)/xacro $(arg model)" />
   <param name="use_gui" value="$(arg gui)"/>

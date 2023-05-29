@@ -31,7 +31,7 @@ def IKIN(x, y, a1, a2):
     return 0, 0, 0
 
 
-def sub_callback(msg):
+def publishIKIN_coords(msg):
     x = msg.positions[0]
     y = msg.positions[1]
     z = msg.positions[2]
@@ -45,13 +45,15 @@ def sub_callback(msg):
     q4 = math.pi/2-q1-q2
     print("q1:", q1, "q2:", q2, "q3:", z, "q4:", q4, "mp1:", mp1, "mp2:", mp2)
 
-
     point.positions = [q1, q2, z, q4, mp1, mp2]
     point.velocities = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
     point.time_from_start = rospy.rostime.Duration(2)
     trajectory_command.points = [point]
 
-rospy.Subscriber("bme_robot_coordinates", JointTrajectoryPoint, sub_callback, queue_size=1) 
+
+
+
+rospy.Subscriber("bme_robot_coordinates", JointTrajectoryPoint, publishIKIN_coords, queue_size=100) 
 
 while not rospy.is_shutdown():
     trajectory_command.header.stamp = rospy.Time.now()

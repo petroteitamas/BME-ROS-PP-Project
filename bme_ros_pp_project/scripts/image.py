@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+
+# For debug purpose
+
 from __future__ import print_function
 
 import roslib
@@ -75,35 +78,49 @@ class image_converter:
     #red_count, red_markers = cv2.connectedComponents(green_opened)
 
 
-
-    label_image = label(green_opened)
-    avgs=list()
-
+    #Red
+    label_image = label(red_opened)
+    red_coords=list()
     for region in regionprops(label_image):
       if region.area >= 100:
         minr, minc, maxr, maxc = region.bbox
         py = (minr+maxr)/2
         px = (minc+maxc)/2
         x, y = self.camera2xy(px, py)
-        avgs.append((x, y))
+        red_coords.append((x, y))
         
-    print(avgs)
-
+    #Green
+    label_image = label(green_opened)
+    green_coords=list()
+    for region in regionprops(label_image):
+      if region.area >= 100:
+        minr, minc, maxr, maxc = region.bbox
+        py = (minr+maxr)/2
+        px = (minc+maxc)/2
+        x, y = self.camera2xy(px, py)
+        green_coords.append((x, y))
+    
+    points = {"red":red_coords, "green":green_coords}
+    print(points)
 
     #cv2.imshow("Image markers", markers)
-    #cv2.imshow("Image mask_red", mask_green)
-    cv2.imshow("Image mask_red", green_opened)
+    cv2.imshow("Image red_opened", red_opened)
+    cv2.imshow("Image green_opened", green_opened)
     cv2.waitKey(3)
+    self.image_sub.unregister()
+    
 
 
 def main(args):
+  rospy.sleep(3.0)
   ic = image_converter()
   rospy.init_node('image_converter', anonymous=True)
   try:
+
     rospy.spin()
   except KeyboardInterrupt:
     print("Shutting down")
-  cv2.destroyAllWindows()
+    cv2.destroyAllWindows()
 
 if __name__ == '__main__':
     main(sys.argv)

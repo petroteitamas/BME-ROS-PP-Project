@@ -253,10 +253,10 @@
 
 <!-- Left finger joint -->
   <joint name="left_finger_joint" type="prismatic">
-    <limit lower="0" upper="0.006" effort="100" velocity="4.0"/>
+    <limit lower="-0.016" upper="0.01" effort="100" velocity="4.0"/>
     <parent link="link_E"/>
     <child link="left_finger"/>
-    <axis xyz="0 1 0"/>
+    <axis xyz="0 -1 0"/>
     <origin xyz="0.0 0.00 0.00" />
   </joint>
 
@@ -310,10 +310,10 @@
 
   <!-- Right finger joint -->
   <joint name="right_finger_joint" type="prismatic">
-    <limit lower="0" upper="0.006" effort="100" velocity="4.0"/>
+    <limit lower="-0.0136" upper="0.01" effort="100" velocity="4.0"/>
     <parent link="link_E"/>
     <child link="right_finger"/>
-    <axis xyz="0 -1 0"/>
+    <axis xyz="0 1 0"/>
     <origin xyz="0.0 0.0 0.0" />
   </joint>
 

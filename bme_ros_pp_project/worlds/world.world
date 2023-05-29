@@ -511,7 +511,7 @@
 
 
       <model name='red_box_1'>
-        <pose frame=''>0.275 0.275 1.1 0 0 0</pose>
+        <pose frame=''>0.190 0.240 1.1 0 0 0</pose>
         <scale>1 1 1</scale>
         <link name='link_0'>
           <pose frame=''>0.275 0.275 0.5 0 0 0</pose>
@@ -523,7 +523,7 @@
 
 
       <model name='red_box_2'>
-          <pose frame=''>0.375 0.120 1.1 0 0 0</pose>
+          <pose frame=''>0.240 0.42 1.1 0 0 0</pose>
           <scale>1 1 1</scale>
           <link name='link_0'>
             <pose frame=''>0.275 0.275 0.5 0 0 0</pose>
@@ -536,7 +536,7 @@
 
 
       <model name='green_box_1'>
-        <pose frame=''>0.275 0.375 1.1 0 0 0</pose>
+        <pose frame=''>0.115 0.37 1.1 0 0 0</pose>
         <scale>1 1 1</scale>
         <link name='link_0'>
           <pose frame=''>0.275 0.275 0.5 0 0 0</pose>
@@ -560,7 +560,7 @@
 
 
       <model name='green_box_3'>
-          <pose frame=''>0.175 0.375 1.1 0 0 0</pose>
+          <pose frame=''>0.374 0.175 1.1 0 0 0</pose>
           <scale>1 1 1</scale>
           <link name='link_0'>
             <pose frame=''>0.275 0.275 0.5 0 0 0</pose>
@@ -702,8 +702,8 @@
           <surface>
             <friction>
               <ode>
-                <mu>1</mu>
-                <mu2>1</mu2>
+                <mu>10</mu>
+                <mu2>10</mu2>
                 <fdir1>0 0 0</fdir1>
                 <slip1>0</slip1>
                 <slip2>0</slip2>

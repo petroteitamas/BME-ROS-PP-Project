@@ -103,11 +103,11 @@ class image_converter:
     points = {"red":red_coords, "green":green_coords}
     print(points)
 
-    #cv2.imshow("Image markers", markers)
+    cv2.imshow("Image", cv_image)
     cv2.imshow("Image red_opened", red_opened)
     cv2.imshow("Image green_opened", green_opened)
     cv2.waitKey(3)
-    self.image_sub.unregister()
+    #self.image_sub.unregister()
     
 
 

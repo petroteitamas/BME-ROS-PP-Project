@@ -26,8 +26,8 @@ pub = rospy.Publisher('bme_robot_coordinates', JointTrajectoryPoint, queue_size=
 rate = rospy.Rate(0.5)
 
 
-place_pose = {"red":(0.05, 0.3, 0.1), "green":(0.05, 0.4, 0.1)} # X, Y, increment
-gripper = {"close": -0.016, "open": 0.01}
+place_pose = {"red":(0.32, 0.25, 0.1), "green":(0.32, 0.35, 0.1)} # X, Y, increment
+gripper = {"close": -0.02, "open": 0.01}
 pp_height = -0.04 #Height of the cube
 
 
@@ -160,7 +160,7 @@ while not rospy.is_shutdown():  # Run the node until Ctrl-C is pressed
 
             #place
             # -> approach
-            place_x = place_pose["red"][0] + i * place_pose["red"][2]
+            place_x = place_pose["red"][0] - i * place_pose["red"][2]
             place_y = place_pose["red"][1]
             xyzw(place_x, place_y, 0, 0, gripper["close"], gripper["close"])
             rospy.sleep(5.0)
@@ -194,7 +194,7 @@ while not rospy.is_shutdown():  # Run the node until Ctrl-C is pressed
 
             #place
             # -> approach
-            place_x = place_pose["green"][0] + i * place_pose["green"][2]
+            place_x = place_pose["green"][0] - i * place_pose["green"][2]
             place_y = place_pose["green"][1]
             xyzw(place_x, place_y, 0, 0, gripper["close"], gripper["close"])
             rospy.sleep(5.0)

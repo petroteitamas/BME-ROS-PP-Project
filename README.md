@@ -34,7 +34,7 @@
 
 # 1. Feladat bemutatása
 
-A tárgy keretein belül egy olyan robotmanipulációt programot készítettünk el, amely képes egy virtuális kamera segítségével különböző színű kockákat szétválogatni. A program önállóan képes detektálni az elhelyezkedő kockák számát, és azon helyzeteit.
+A tárgy keretein belül egy olyan robotmanipulációs programot készítettünk el, amely képes egy virtuális kamera segítségével különböző színű kockákat szétválogatni. A program önállóan képes detektálni az elhelyezkedő kockák számát, és azok helyzeteit.
 
 
 <a href="https://youtu.be/ZBNHiPTMlw4" target="_blank">
@@ -44,18 +44,18 @@ A tárgy keretein belül egy olyan robotmanipulációt programot készítettünk
 
 # 2. Program futtatása
  
-A program indításának első lépése, hogy betöltsük a Gazebo fizikai szimulációs környezetet, majd elindítsuk abban a szimulácitó.
+A program indításának első lépése, hogy betöltsük a Gazebo fizikai szimulációs környezetet, majd elindítsuk abban a szimulációt.
 
 ```console
 roslaunch bme_ros_pp_project spawn_robot.launch
 ```
-A program egyszerűbb futtatása érdekében létrehoztunk egy bash file-t, így a projekt indítása méggyorsabb tud lenni a következő paranccsal (tab nyomásával a részlegesen beírt parancs kiegészül):
+A program egyszerűbb futtatása érdekében létrehoztunk egy bash file-t, így a projekt indítása még gyorsabb tud lenni a következő paranccsal (tab nyomásával a részlegesen beírt parancs kiegészül):
 
 ```console
 ./start.bash
 ```
 
-Ezt követően két külön modult kell még elindítanunk. Egyrész azt amely az inverz kinematikai számításokat végzi, másrészt azt amely a kameraképet feldolgozza, kiértékeli és kiküldi az előzőleg elindított modulnak.
+Ezt követően két külön modult kell még elindítanunk. Egyrészt azt, amely az inverz kinematikai számításokat végzi, másrészt azt, amely a kameraképet feldolgozza, kiértékeli és kiküldi az előzőleg elindított modulnak.
 
 Tehát indítsuk el a következő két modult
 ```console
@@ -75,12 +75,12 @@ A program segítségével a robot önállóan elvégzi a kockák szín szerinti 
 
 ## 3.1. Robot felépítése
 
-Az projekt megvalósítása során célunk az volt, hogy a vizuális szemléltetés érdekében egy létező fizikai robotot fogunk a ROS által biztosított szimulációs környezetben megjeleníteni. Mivel az ABB márkájú robotoknak ingyenesen, publikusan hozzáférhető mesh fájljuk van, valamint a dokumentációjuk is számunkra kellő mértékben részletes, továbbá a megvalósítandó feladat 2.5D manipulációval is végrehajtható, így esett a választás az [IRB 920-6/0.55](https://search.abb.com/library/Download.aspx?DocumentID=3HAC075723-001&LanguageCode=en&DocumentPartId=&Action=Launch) típusú SCARA kinematikájú robotra.
+A projekt megvalósítása során célunk az volt, hogy a vizuális szemléltetés érdekében egy létező fizikai robotot fogunk a ROS által biztosított szimulációs környezetben megjeleníteni. Mivel az ABB márkájú robotoknak ingyenesen, publikusan hozzáférhető mesh fájljuk van, valamint a dokumentációjuk is számunkra kellő mértékben részletes, továbbá a megvalósítandó feladat 2.5D manipulációval is végrehajtható, így esett a választás az [IRB 920-6/0.55](https://search.abb.com/library/Download.aspx?DocumentID=3HAC075723-001&LanguageCode=en&DocumentPartId=&Action=Launch) típusú SCARA kinematikájú robotra.
 
 
 
 
-A letöltött STEP modellek koordinátarendszeri nem voltak számunkra megfelelőek, így Inventor segítségével a Denavit-Hartenberg paramétereknek megfelelő koordinátarendszerbe transzformáltuk azokat. Egy online STEP to DAE konverter segítségével átkonvertáltuk a 3D modelljeinket, azonban azzal szembesültünk, hogy Gazibo környezetben a grafika eltűnt. Kisebb utánajárást követően .obj formátumba kiexportált 3D állományokat már meg tudtunk nyitni Blenderben, ahonnan már probléma mentesen ki tudtuk exportálni .dae formátumba.
+A letöltött STEP modellek koordinátarendszerei nem voltak számunkra megfelelőek, így Inventor segítségével a Denavit-Hartenberg paramétereknek megfelelő koordinátarendszerbe transzformáltuk azokat. Egy online STEP to DAE konverter segítségével átkonvertáltuk a 3D modelljeinket, azonban azzal szembesültünk, hogy Gazibo környezetben a grafika eltűnt. Kisebb utánajárást követően .obj formátumba kiexportált 3D állományokat már meg tudtunk nyitni Blenderben, ahonnan már probléma mentesen ki tudtuk exportálni .dae formátumba.
 
 
 
@@ -111,7 +111,7 @@ Tengelyhatárok
 
 
 
-Az egyes tagok befoglaló méretei alapján felparamétereztük a collision geometryt, majd ezen tagok méretei alapján számításokat végeztük az egyes tagok tömegei és tehetetlenséi nyomatéki mátrixainak tekintetében. A számítások a mellékletek (attachment) mappában található.
+Az egyes tagok befoglaló méretei alapján felparamétereztük a collision geometryt, majd ezen tagok méretei alapján számításokat végeztünk az egyes tagok tömegei és tehetetlenségi nyomatéki mátrixainak tekintetében. A számítások a mellékletek (attachment) mappában található.
 
 <p align="center">
 <img src="./assets/collision_box.png" alt="Collision geometries"><br>
@@ -122,11 +122,10 @@ Az egyes tagok befoglaló méretei alapján felparamétereztük a collision geom
 
 ## 3.3. Inverz kinematika megvalósítása
 
-A robot descartes koordinátarendszerbeli mozgatásához meg kell oldanunk az inverz kinematikai feladatot. A SCARA felépítésű robot pick and place feladatok megvalósításánál leredukálható 2 DoF-ra, tehát síkban történő mozgatásra, valamint 
+A robot Descartes koordinátarendszerbeli mozgatásához meg kell oldanunk az inverz kinematikai feladatot. A SCARA felépítésű robot pick and place feladatok megvalósításánál leredukálható 2 DoF-ra, tehát síkban történő mozgatásra.
 
 
-
-Az inverz kinematikai helyes megvalósításáról egy Python kódot is készítettünk, amelyben szemléltetjük mind a csuklótér mind a munkatérbeli lineáris interpolációt.
+Az inverz kinematika helyes megvalósításáról egy Python kódot is készítettünk, amelyben szemléltetjük mind a csuklótér, mind a munkatérbeli lineáris interpolációt.
 
 
 
@@ -139,7 +138,7 @@ Csukló és lineáris interpolált mozgás
 
 
 
-A programkód megtalálható az illustration_codes mappán belül
+A programkód megtalálható az illustration_codes mappán belül.
 
 
 ## 3.4. Képfeldolgozás megvalósítása
@@ -176,11 +175,11 @@ A képfeldolgozás lépései:
  * Színszűrő alkalmazása
  * Zaj eltávolítása nyitás morfológiai művelettel
  * A kép címkézése (objektumok szegmentálása)
- * A kép felcímképett objektumainak helyzeteinek kinyerése.
- * A kamera és a robot koordinátarendszere közötti transzformáció elvégzése.
+ * A képen lévő felcímkézett objektumok helyzeteinek kinyerése
+ * A kamera és a robot koordinátarendszere közötti transzformáció elvégzése
  * A megtalált objektumhelyzetek listába rendezése, majd kulcs-érték párral ellátott változóba helyezése
 
- Az így megállapított pozíciók a robot felvételi (pick pozíciói).
+ Az így megállapított pozíciók a robot felvételi (pick) pozíciói.
 
 
  ## 3.5. Robot mozgatás
@@ -203,14 +202,14 @@ Egy mozgásciklus a következő lépésekből áll:
  1. Orientáció detektálása
  2. Dinamikus kockagenerálás
 
-      Erre egy programot is készítettünk melynek eredményét a következő kép szemlélteti, azonban idő hiányában nem sikerült a programba implementálni.
+      Erre egy programot is készítettünk, melynek eredményét a következő kép szemlélteti, azonban idő hiányában nem sikerült a programba implementálni.
     
       <p align="center">
       <img src="./assets/random_position.png" alt="Cubes in random position"><br>
-      Az algoritmus által kigenerált random színű és helyzetű kockák <br> (Négy futtatás eredménye)
+      Az algoritmus által generált random színű és helyzetű kockák <br> (Négy futtatás eredménye)
       </p>
 
-      A generáláshoz használt programkód megtalálható az illustration_codes mappán belül
+      A generáláshoz használt programkód megtalálható az illustration_codes mappán belül.
 
  3. Több, előre nem definiált szín szerinti szeparáció
 

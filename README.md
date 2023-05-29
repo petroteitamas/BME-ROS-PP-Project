@@ -139,7 +139,7 @@ Csukló és lineáris interpolált mozgás
 
 
 
-A programkód megtalálható az illustration_codes mappánn belül
+A programkód megtalálható az illustration_codes mappán belül
 
 
 ## 3.4. Képfeldolgozás megvalósítása
@@ -192,7 +192,7 @@ Egy mozgásciklus a következő lépésekből áll:
 * Felvételi pozícióba mozgás
 * Robotmegfogó zárása
 * Felvételi pont fölé mozgás
-* Lerakási pont fölé mozgás (a koordináták Y értéke szín szerint változik és eggy csoporton belül X irányban inkrementálódik)
+* Lerakási pont fölé mozgás (a koordináták Y értéke szín szerint változik és egy csoporton belül X irányban inkrementálódik)
 * Lerakási pozícióba mozgás
 * Robotmegfogó nyitása
 * Felvételi pont fölé mozgás

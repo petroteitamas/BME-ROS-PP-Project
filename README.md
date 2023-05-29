@@ -26,21 +26,22 @@
 
 
 # Tartalomjegyzék
-1. [Feladat bemutatása](#Feladat-bemutatása)  
-2. [Program futtatása](#Program-futtatása)
-3. [Megvalósítás lépései](#Megvalósítás-lépései)
+1. [Feladat bemutatása](#1-feladat-bemutatása)  
+2. [Program futtatása](#2-program-futtatása)
+3. [Megvalósítás lépései](#3-megvalósítás-lépései)
 
-      3.1. [Robot felépítése](#Robot-felépítése)
+      3.1. [Robot felépítése](#31-robot-felépítése)
 
-      3.2. [Koordinátarendszer felépítése](#Koordinátarendszer-felépítése)
+      3.2. [Koordinátarendszer felépítése](#32-koordinátarendszer-felépítése)
 
-      3.3. [Inverz kinematika megvalósítása](#Inverz-kinematika-megvalósítása)
+      3.3. [Inverz kinematika megvalósítása](#33-inverz-kinematika-megvalósítása)
 
-      3.4. [Képfeldolgozás megvalósítása](#Képfeldolgozás-megvalósítása)
+      3.4. [Képfeldolgozás megvalósítása](#34-képfeldolgozás-megvalósítása)
 
-      3.5. [Robot mozgatás](#Robot-mozgatás)
-4. [Összegzés](#Összegzés)
-5. [Továbbfejlesztési lehetőségek](#Továbbfejlesztési-lehetőségek)
+      3.5. [Robot mozgatás](#35-robot-mozgatás)
+4. [Továbbfejlesztési lehetőségek](#4-továbbfejlesztési-lehetőségek)
+5. [Összegzés](#5-összegzés)
+
 
 
 # 1. Feladat bemutatása
@@ -145,13 +146,15 @@ A képfeldolgozás lépései:
 A robot a képfeldolgozás során megállapított pontokból egymáshoz képest X irányban, inkrementálisan növelt, előre meghatározott helyzetekbe szállítja a kockákat. A jelen feladatban a két különböző színű kockát két külön sorba helyezi el. 
 
 
-# 4. Összegzés
-A feladat megoldásánál sok, korábbi tárgyból megszerzett ismeretet tudtunk hasznosítani, az elméleti tudásunkat gyakorlati alkalmazásba átültetni.
 
-
-# 5. Továbbfejlesztési lehetőségek
+# 4. Továbbfejlesztési lehetőségek
  1. Orientáció detektálása
  2. Dinamikus kockagenerálás
       Erre egy programot is készítettünk melynek eredményét a következő kép szemlélteti, azonban idő hiányában nem sikerült a programba implementálni.
 
  3. Több, előre nem definiált szín szerinti szeparáció
+
+
+# 5. Összegzés
+A feladat megoldásánál sok, korábbi tárgyból megszerzett ismeretet tudtunk hasznosítani, az elméleti tudásunkat gyakorlati alkalmazásba átültetni.
+

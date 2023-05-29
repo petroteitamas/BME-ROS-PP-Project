@@ -87,7 +87,7 @@ A letöltött STEP modellek koordinátarendszeri nem voltak számunkra megfelel�
 ## 3.2. Koordinátarendszer felépítése
 
 <p align="center">
-<img src="./assets/robot_DH.png" width = "420" alt="Robot D-H parameters"><br>
+<img src="./assets/robot_DH.png" alt="Robot D-H parameters"><br>
 A robot koordinátarendszere
 </p>
 
@@ -97,7 +97,7 @@ A Khalil-Dombre féle módosított D-H paramétereknek megfelelően a Z tengelye
 
 
 <p align="center">
-<img src="./assets/tf_tree.png" width = "420" alt="TF tree"><br>
+<img src="./assets/tf_tree.png" alt="TF tree"><br>
 A robot koordinátarendszere
 </p>
 
@@ -105,7 +105,7 @@ A robot koordinátarendszere
 A koordinátarendszerek felépítését követően definiáltuk az egyes csuklók mozgástartományát, mely adatok a robot adatlapjában megtalálhatók.
 
 <p align="center">
-<img src="./assets/limits.png" width = "420" alt="Limits"><br>
+<img src="./assets/limits.png" alt="Limits"><br>
 Tengelyhatárok
 </p>
 
@@ -114,7 +114,7 @@ Tengelyhatárok
 Az egyes tagok befoglaló méretei alapján felparamétereztük a collision geometryt, majd ezen tagok méretei alapján számításokat végeztük az egyes tagok tömegei és tehetetlenséi nyomatéki mátrixainak tekintetében. A számítások a mellékletek (attachment) mappában található.
 
 <p align="center">
-<img src="./assets/collision_box.png" width = "420" alt="Collision geometries"><br>
+<img src="./assets/collision_box.png" alt="Collision geometries"><br>
 Ütközési geometriák
 </p>
 
@@ -131,7 +131,7 @@ Az inverz kinematikai helyes megvalósításáról egy Python kódot is készít
 
 
 <p align="center">
-<img src="./assets/joint_linear_motion.png" width = "420" alt="Joint vs Linear interpolation"><br>
+<img src="./assets/joint_linear_motion.png" alt="Joint vs Linear interpolation"><br>
 Csukló és lineáris interpolált mozgás
 </p>
 
@@ -149,21 +149,21 @@ Képfeldolgozás segítségével lehetőség van a fizikai könyezetbe elhelyeze
 
 
 <p align="center">
-<img src="./assets/Image_process_RAW.png" width = "420" alt="The image seen by the camera"><br>
+<img src="./assets/Image_process_RAW.png" width = "550" alt="The image seen by the camera"><br>
 A kamera által látott kép
 </p>
 
 
 
 <p align="center">
-<img src="./assets/Image_process_RED.png" width = "420" alt="Image filtered to RED"><br>
+<img src="./assets/Image_process_RED.png" width = "550" alt="Image filtered to RED"><br>
 Piros színre szűrt kép
 </p>
 
 
 
 <p align="center">
-<img src="./assets/Image_process_GREEN.png" width = "420" alt="Image filtered to GREEN"><br>
+<img src="./assets/Image_process_GREEN.png" width = "550" alt="Image filtered to GREEN"><br>
 Zöld színre szűrt kép
 </p>
 
@@ -206,7 +206,7 @@ Egy mozgásciklus a következő lépésekből áll:
       Erre egy programot is készítettünk melynek eredményét a következő kép szemlélteti, azonban idő hiányában nem sikerült a programba implementálni.
     
       <p align="center">
-      <img src="./assets/random_position.png" width = "420" alt="Cubes in random position"><br>
+      <img src="./assets/random_position.png" alt="Cubes in random position"><br>
       Az algoritmus által kigenerált random színű és helyzetű kockák <br> (Négy futtatás eredménye)
       </p>
 

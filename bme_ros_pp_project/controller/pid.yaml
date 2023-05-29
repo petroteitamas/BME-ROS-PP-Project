@@ -19,8 +19,8 @@ gazebo_ros_control:
       i_clamp_max: 500.0
       i_clamp_min: -500.0
     Axis4:
-      p: 1000.0
-      i: 0.1 
+      p: 100.0
+      i: 0.5 
       d: 1.0
       i_clamp_max: 500.0
       i_clamp_min: -500.0

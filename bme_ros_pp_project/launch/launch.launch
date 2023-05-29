@@ -1,0 +1,8 @@
+<launch>
+ <include file="$(find bme_ros_pp_project)/launch/spawn_robot.launch"/>
+ <node pkg="bme_ros_pp_project" name="sub_xyzw_ikin_pub_joint.py" type="sub_xyzw_ikin_pub_joint.py" output="screen"></node>
+ <node name="spawn_cube" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur5_pnp)/urdf/object.urdf -urdf -model cube" />
+ <!--<node pkg="bme_ros_pp_project" name="pub_ang.py" type="pub_ang.py" output="screen"></node>
+ <node pkg="rqt_reconfigure" name="rqt_reconfigure" type="rqt_reconfigure" output="screen"></node>
+ <node pkg="rqt_joint_trajectory_controller" name="rqt_joint_trajectory_controller" type="rqt_joint_trajectory_controller" output="screen"></node>-->
+</launch>

@@ -35,11 +35,18 @@ def sub_callback(msg):
     x = msg.positions[0]
     y = msg.positions[1]
     z = msg.positions[2]
-    print("Sub x:", x, "y:", y, "z:", z)
+    mp1 = msg.positions[4]
+    mp2 = msg.positions[5]
+    #print("Sub x:", x, "y:", y, "z:", z)
 
     q1, q2, ok = IKIN(x, y, a1, a2)
-    #print("q1:", q1, "q2:", q2)
-    point.positions = [q1, q2, z, 0.0, 0.0, 0.0]
+
+    # Axis 4 beállítása
+    q4 = math.pi/2-q1-q2
+    print("q1:", q1, "q2:", q2, "q3:", z, "q4:", q4, "mp1:", mp1, "mp2:", mp2)
+
+
+    point.positions = [q1, q2, z, q4, mp1, mp2]
     point.velocities = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
     point.time_from_start = rospy.rostime.Duration(2)
     trajectory_command.points = [point]

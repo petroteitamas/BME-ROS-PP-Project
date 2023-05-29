@@ -1,23 +1,7 @@
-[//]: # (Image References)
-[image1]: ./assets/bme_logo.jpg "BME"
-[image2]: ./assets/play_youtube.png "Play on YouTube"
-[image3]: ./assets/robot_DH.png "Robot D-H parameters"
-[image4]: ./assets/tf_tree.png "TF tree"
-[image5]: ./assets/joint_linear_motion.png "Joint vs Linear interpolation"
+<p align="center">
+<img src="./assets/bme_logo.jpg" alt="BME"><br>
+</p>
 
-[image6]: ./assets/Image_process_RAW.png "The image seen by the camera"
-[image7]: ./assets/Image_process_RED.png "Image filtered to RED"
-[image8]: ./assets/Image_process_GREEN.png "Image filtered to GREEN"
-
-[image9]: ./assets/random_position.png "Cubes in random position"
-
-[image10]: ./assets/limits.png "Limits"
-[image11]: ./assets/collision_box.png "Collision box"
-
-
-
-
-![alt text][image1]
 
 # Robotrendszerek laboratórium projektfeladat
 
@@ -53,8 +37,9 @@
 A tárgy keretein belül egy olyan robotmanipulációt programot készítettünk el, amely képes egy virtuális kamera segítségével különböző színű kockákat szétválogatni. A program önállóan képes detektálni az elhelyezkedő kockák számát, és azon helyzeteit.
 
 
-
-[![alt text][image2]](https://youtu.be/ZBNHiPTMlw4)
+<a href="https://youtu.be/ZBNHiPTMlw4" target="_blank">
+ <img src="./assets/play_youtube.png" alt="Watch the video on YouTube" />
+</a>
 
 
 # 2. Program futtatása
@@ -100,25 +85,39 @@ A letöltött STEP modellek koordinátarendszeri nem voltak számunkra megfelel�
 
 
 ## 3.2. Koordinátarendszer felépítése
-![alt text][image3]
-<p style="text-align: center;">A robot koordinátarendszere</p>
+
+<p align="center">
+<img src="./assets/robot_DH.png" width = "420" alt="Robot D-H parameters"><br>
+A robot koordinátarendszere
+</p>
+
+
 
 A Khalil-Dombre féle módosított D-H paramétereknek megfelelően a Z tengelyek körül történik az egyes Jointok mozgatása. SCARA felépítésű robot esetében ez a tengely kizárólag függőleges irányú.
 
-![alt text][image4]
-<p style="text-align: center;">TF tree</p>
+
+<p align="center">
+<img src="./assets/tf_tree.png" width = "420" alt="TF tree"><br>
+A robot koordinátarendszere
+</p>
 
 
 A koordinátarendszerek felépítését követően definiáltuk az egyes csuklók mozgástartományát, mely adatok a robot adatlapjában megtalálhatók.
-![alt text][image10]
-<p style="text-align: center;">Axis limits</p>
+
+<p align="center">
+<img src="./assets/limits.png" width = "420" alt="Limits"><br>
+Tengelyhatárok
+</p>
 
 
 
 Az egyes tagok befoglaló méretei alapján felparamétereztük a collision geometryt, majd ezen tagok méretei alapján számításokat végeztük az egyes tagok tömegei és tehetetlenséi nyomatéki mátrixainak tekintetében. A számítások a mellékletek (attachment) mappában található.
 
-![alt text][image11]
-<p style="text-align: center;">Collision geometries</p>
+<p align="center">
+<img src="./assets/collision_box.png" width = "420" alt="Collision geometries"><br>
+Ütközési geometriák
+</p>
+
 
 
 ## 3.3. Inverz kinematika megvalósítása
@@ -129,8 +128,16 @@ A robot descartes koordinátarendszerbeli mozgatásához meg kell oldanunk az in
 
 Az inverz kinematikai helyes megvalósításáról egy Python kódot is készítettünk, amelyben szemléltetjük mind a csuklótér mind a munkatérbeli lineáris interpolációt.
 
-![alt text][image5]
-<p style="text-align: center;">Joint interpolated motion and Linear interpolation</p>
+
+
+<p align="center">
+<img src="./assets/joint_linear_motion.png" width = "420" alt="Joint vs Linear interpolation"><br>
+Csukló és lineáris interpolált mozgás
+</p>
+
+
+
+
 
 A programkód megtalálható az illustration_codes mappánn belül
 
@@ -139,17 +146,26 @@ A programkód megtalálható az illustration_codes mappánn belül
 
 Képfeldolgozás segítségével lehetőség van a fizikai könyezetbe elhelyezett kockák helyzeteinek kinyerésére. 
 
-![alt text][image6]
-<p style="text-align: center;">Nyers képkocka</p>
 
 
-![alt text][image7]
-<p style="text-align: center;">Piros színre szűrt kép</p>
+<p align="center">
+<img src="./assets/Image_process_RAW.png" width = "420" alt="The image seen by the camera"><br>
+A kamera által látott kép
+</p>
 
 
-![alt text][image8]
-<p style="text-align: center;">Zöld színre szűrt kép</p>
 
+<p align="center">
+<img src="./assets/Image_process_RED.png" width = "420" alt="Image filtered to RED"><br>
+Piros színre szűrt kép
+</p>
+
+
+
+<p align="center">
+<img src="./assets/Image_process_GREEN.png" width = "420" alt="Image filtered to GREEN"><br>
+Zöld színre szűrt kép
+</p>
 
 
 
@@ -188,8 +204,13 @@ Egy mozgásciklus a következő lépésekből áll:
  2. Dinamikus kockagenerálás
 
       Erre egy programot is készítettünk melynek eredményét a következő kép szemlélteti, azonban idő hiányában nem sikerült a programba implementálni.
-      ![alt text][image9]
-      A programkód megtalálható az illustration_codes mappánn belül
+    
+      <p align="center">
+      <img src="./assets/random_position.png" width = "420" alt="Cubes in random position"><br>
+      Az algoritmus által kigenerált random színű és helyzetű kockák <br> (Négy futtatás eredménye)
+      </p>
+
+      A generáláshoz használt programkód megtalálható az illustration_codes mappán belül
 
  3. Több, előre nem definiált szín szerinti szeparáció
 
